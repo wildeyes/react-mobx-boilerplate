@@ -39,7 +39,7 @@ routes = [{
   route: '/users/?:id?',
   async onEnter(appState, params: { id?: string }) {
     appState.setMessage('');
-    if (params.id) { // simuate additional fetching that needs to happen after route loads
+    if (params.id) { // simulate additional fetching that needs to happen after route loads
       appState.setMessage(`fetching data for user ${params.id}...`);
       await new Promise(r => setTimeout(r, 500));
       appState.setMessage(`data fetched for user ${params.id}`);
